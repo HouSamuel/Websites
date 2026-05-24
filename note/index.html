@@ -1,38 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <!-- 开启移动端完美适配 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Loaded</title>
+    <title>秘密页面</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        /* 整个页面铺满全屏 */
-        html, body {
-            width: 100%;
+        body {
             min-height: 100vh;
-            /* 深色背景，护眼不刺眼 */
-            background: #121212;
-            /* 核心：一键完美居中 */
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: #121212;
         }
-        .text {
-            color: #ffffff;
-            /* 文字自动缩放，大屏大字、小屏自动缩小 */
-            font-size: clamp(24px, 6vw, 72px);
-            font-weight: 600;
-            font-family: sans-serif;
-            text-align: center;
+        .switch-btn {
+            padding: 18px 45px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            background-color: #333842;
+            color: #f0f0f0;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .switch-btn:hover {
+            background-color: #444b58;
         }
     </style>
 </head>
 <body>
-    <div class="text">M❤️朱强</div>
+    <button class="switch-btn">解锁秘密</button>
+
+    <script>
+        const btn = document.querySelector('.switch-btn');
+        // 原始按钮文字与秘密文字，自行修改即可
+        const originText = "你真的要看吗";
+        const secretText = "M❤️强";
+        let status = false;
+
+        btn.addEventListener('click', () => {
+            if (!status) {
+                btn.innerText = secretText;
+                status = true;
+            } else {
+                btn.innerText = originText;
+                status = false;
+            }
+        })
+    </script>
 </body>
 </html>
