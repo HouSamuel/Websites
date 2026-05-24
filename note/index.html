@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 开启移动端完美适配 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Loaded</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 整个页面铺满全屏 */
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            /* 深色背景，护眼不刺眼 */
+            background: #121212;
+            /* 核心：一键完美居中 */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .text {
+            color: #ffffff;
+            /* 文字自动缩放，大屏大字、小屏自动缩小 */
+            font-size: clamp(24px, 6vw, 72px);
+            font-weight: 600;
+            font-family: sans-serif;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="text">M❤️朱强</div>
+</body>
+</html>
